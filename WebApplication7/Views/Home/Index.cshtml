@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["mxg"] != null)
+{
+
+    <div class="alert alert-info">
+        @TempData["mxg"]
+    </div>
+
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label>Upload an Image</label>
+        <input type="file" name="file" id="file" value=" " class="form-control" />
+    </div>
+
+    <input type="submit" name="submit" value="Upload" class="btn btn-success" />
+}
+
+
+@Html.Partial("_allimages")

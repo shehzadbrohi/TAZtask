@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication7.Models.Image>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">*@
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 art" style="margin-bottom:10px;">
+            <img src="@Url.Content("~/Content/Images/"+item.Image_Url)" width="100%" />
+            <div class="overlay">
+                <h4 class="ov-text">@item.Image_Url <br /> @item.Category.Name</h4>
+                
+            </div>
+        </div>
+
+
+        @*<tr>
+                <td>
+
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                </td>
+            </tr>*@
+    }
+
+
+@*</table>*@
